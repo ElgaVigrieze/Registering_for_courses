@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${title}"></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link th:href="@{/css/main.css}" rel="stylesheet"/>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+            crossorigin="anonymous"></script>
+
+</head>
+<br>
+<br/>
+
+
+<div th:if="${loginFailed}">
+    <input type="text" style="margin-top: 5px; margin-left: 40px; width: 600px; font-size: large; font-weight: bolder"
+           placeholder="Your e-mail or/and password wasn't recognized! Please try again!" readonly>
+</div>
+<br/>
+<br/>
+
+<div class="container">
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+
+
+            <form method="post" th:action="${'/user'}">
+                <input type="email" id="eMail" class="fadeIn second" name="eMail" placeholder="eMail">
+                <input type="password" id="password" class="fadeIn third" name="password" placeholder="password">
+                <input type="submit" class="fadeIn fourth" value="Log In">
+            </form>
+
+
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
